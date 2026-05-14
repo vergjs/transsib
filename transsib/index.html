@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Великий Сибирский Путь — История Транссибирской Магистрали</title>
+  <meta name="description"
+    content="Инженерный подвиг Российской Империи: Story of the Trans-Siberian Railway, the world's longest railway line spanning over 9,000 km." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+
+<body>
+
+
+  <nav id="navbar">
+    <div class="nav-logo">
+      <span class="nav-logo-icon"></span>
+      <span class="nav-logo-text">Великий Сибирский Путь</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#intro">Предыстория</a></li>
+      <li><a href="#map">Маршрут</a></li>
+      <li><a href="#challenges">Испытания</a></li>
+      <li><a href="#gallery">Галерея</a></li>
+      <li><a href="#legacy">Наследие</a></li>
+    </ul>
+    <div class="nav-year">1891 – 1916</div>
+  </nav>
+
+
+  <section id="hero">
+    <div class="hero-overlay"></div>
+    <img class="hero-bg" src="images/hero_locomotive1.jpg" alt="Паровоз на Транссибирской магистрали" />
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span>Университетский проект</span>
+        <span class="dot">·</span>
+        <span>История науки и техники России</span>
+      </div>
+      <h1 class="hero-title">
+        <span class="title-line-1">ВЕЛИКИЙ</span>
+        <span class="title-line-2">СИБИРСКИЙ ПУТЬ</span>
+      </h1>
+      <p class="hero-subtitle">
+        Инженерный подвиг Российской Империи:<br />
+        История создания Транссиба
+      </p>
+      <div class="hero-divider">
+        <span class="divider-line"></span>
+        <span class="divider-icon">✦</span>
+        <span class="divider-line"></span>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num">9 298</span>
+          <span class="stat-label">километров пути</span>
+        </div>
+        <div class="stat-sep"></div>
+        <div class="stat">
+          <span class="stat-num">25 лет</span>
+          <span class="stat-label">строительства</span>
+        </div>
+        <div class="stat-sep"></div>
+        <div class="stat">
+          <span class="stat-num">~90 000</span>
+          <span class="stat-label">рабочих ежегодно</span>
+        </div>
+      </div>
+      <a id="cta-btn" href="#intro" class="btn-primary">
+        <span>Начать путешествие</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 5v14M5 12l7 7 7-7" />
+        </svg>
+      </a>
+    </div>
+    <div class="hero-scroll-hint">
+      <div class="scroll-line"></div>
+      <span>Прокрутите вниз</span>
+    </div>
+  </section>
+
+
+  <section id="intro" class="section-dark">
+    <div class="container">
+      <div class="section-label">Часть I</div>
+      <h2 class="section-title">Становой хребет<br /><em>империи</em></h2>
+      <div class="section-underline"></div>
+
+      <div class="intro-grid">
+        <div class="intro-text">
+          <p class="intro-lead">
+            К концу XIX века Сибирь — богатейший край страны — оставалась фактически отрезанной от центральной России.
+            Бескрайние пространства к востоку от Урала были лишены нормального сообщения: грузы шли месяцами, а
+            переселение крестьян было сопряжено с огромными лишениями.
+          </p>
+          <p>
+            Идея грандиозной железнодорожной магистрали зрела давно, однако именно министр финансов <strong>Сергей
+              Юльевич Витте</strong> придал ей политический и экономический импульс. В 1891 году Высочайшим Рескриптом
+            Александра III строительство было официально объявлено национальным приоритетом. На берегу Тихого океана,
+            близ Владивостока, цесаревич Николай Александрович лично уложил первые символические шпалы и тачку с землёй
+            — так начался этот беспрецедентный проект.
+          </p>
+          <p>
+            Протяжённость дороги от Челябинска до Владивостока составила более <strong>7&thinsp;000 вёрст</strong>. Если
+            учитывать подъезды от Москвы — 9&thinsp;298 километров, что делало Транссиб самой длинной железной дорогой
+            мира — рекорд, не побитый по сей день. Строительство велось одновременно с нескольких сторон, при острой
+            нехватке рабочих рук, в условиях дикой природы, вечной мерзлоты и сибирских морозов.
+          </p>
+          <blockquote class="intro-quote">
+            «Постройка Сибирской дороги есть дело, конечно, великое, труднейшее и многосложное — в особенности ввиду
+            естественных препятствий, которые надобно побороть».
+            <footer>— С.Ю. Витте, докладная записка Александру III, 1892 г.</footer>
+          </blockquote>
+          <p>
+            Магистраль строилась в несколько этапов: Западно-Сибирский, Средне-Сибирский, Забайкальский, Амурский и
+            Уссурийский участки возводились параллельно. Для ускорения строительства была проложена Китайско-Восточная
+            железная дорога (КВЖД) через территорию Маньчжурии. Лишь после Русско-японской войны 1904–1905 гг. страна
+            взялась за исключительно российский маршрут — через тайгу по берегу Амура.
+          </p>
+        </div>
+        <div class="intro-sidebar">
+          <div class="timeline-card">
+            <div class="timeline-title">Хронология строительства</div>
+            <div class="timeline-item">
+              <span class="tl-year">1891</span>
+              <div class="tl-content">
+                <strong>Начало строительства.</strong> Рескрипт Александра III. Церемония во Владивостоке.
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="tl-year">1893</span>
+              <div class="tl-content">
+                <strong>Западно-Сибирский участок.</strong> Челябинск — Омск открыт для движения.
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="tl-year">1898</span>
+              <div class="tl-content">
+                <strong>Средне-Сибирский участок.</strong> Поезда достигают Красноярска и Иркутска.
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="tl-year">1900</span>
+              <div class="tl-content">
+                <strong>КВЖД.</strong> Открытие сквозного движения через Маньчжурию до Владивостока.
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="tl-year">1904</span>
+              <div class="tl-content">
+                <strong>КБЖД.</strong> Завершена Кругобайкальская железная дорога вдоль берега Байкала.
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="tl-year">1916</span>
+              <div class="tl-content">
+                <strong>Завершение.</strong> Амурский участок достроен. Целиком российский маршрут открыт.
+              </div>
+            </div>
+          </div>
+          <div class="sidebar-fact">
+            <span class="fact-icon">⚙️</span>
+            <span>Через тайгу и горы было построено более <strong>570 мостов</strong> и <strong>39 больших
+                тоннелей</strong></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="map" class="section-darker">
+    <div class="container">
+      <div class="section-label">Часть II</div>
+      <h2 class="section-title">Транссиб<br /><em>в деталях</em></h2>
+      <div class="section-underline"></div>
+      <p class="section-desc">От Москвы до Тихого океана — 9 298 километров стали нитью, связавшей восток и запад
+        великой страны.</p>
+
+      <div class="map-route-stations">
+        <div class="station-item">
+          <span class="station-dot start-dot"></span>
+          <span class="station-name">Москва</span>
+          <span class="station-km">0 км</span>
+        </div>
+        <div class="station-connector"></div>
+        <div class="station-item">
+          <span class="station-dot featured-dot"></span>
+          <span class="station-name">Екатеринбург</span>
+          <span class="station-km">1 818 км</span>
+        </div>
+        <div class="station-connector"></div>
+        <div class="station-item">
+          <span class="station-dot featured-dot"></span>
+          <span class="station-name">Омск</span>
+          <span class="station-km">2 712 км</span>
+        </div>
+        <div class="station-connector"></div>
+        <div class="station-item">
+          <span class="station-dot featured-dot"></span>
+          <span class="station-name">Красноярск</span>
+          <span class="station-km">4 098 км</span>
+        </div>
+        <div class="station-connector"></div>
+        <div class="station-item">
+          <span class="station-dot featured-dot"></span>
+          <span class="station-name">Иркутск</span>
+          <span class="station-km">5 184 км</span>
+        </div>
+        <div class="station-connector"></div>
+        <div class="station-item">
+          <span class="station-dot featured-dot"></span>
+          <span class="station-name">КБЖД · Байкал</span>
+          <span class="station-km">5 500 км</span>
+        </div>
+        <div class="station-connector"></div>
+        <div class="station-item">
+          <span class="station-dot featured-dot"></span>
+          <span class="station-name">Чита</span>
+          <span class="station-km">6 199 км</span>
+        </div>
+        <div class="station-connector"></div>
+        <div class="station-item">
+          <span class="station-dot featured-dot"></span>
+          <span class="station-name">Хабаровск</span>
+          <span class="station-km">8 521 км</span>
+        </div>
+        <div class="station-connector"></div>
+        <div class="station-item">
+          <span class="station-dot end-dot"></span>
+          <span class="station-name">Владивосток</span>
+          <span class="station-km">9 298 км</span>
+        </div>
+      </div>
+
+      <div class="map-wrapper">
+        <div id="leaflet-map"></div>
+
+
+      </div>
+    </div>
+  </section>
+
+
+  <section id="challenges" class="section-dark">
+    <div class="container">
+      <div class="section-label">Часть III</div>
+      <h2 class="section-title">Победа<br /><em>над стихией</em></h2>
+      <div class="section-underline"></div>
+      <p class="section-desc">Инженеры Российской Империи столкнулись с препятствиями, не имевшими аналогов в мировой
+        практике.</p>
+
+      <div class="cards-grid">
+
+        <div class="challenge-card" id="card-permafrost">
+          <div class="card-img-wrap">
+            <img src="images/card_permafrost1.jpg" alt="Строительство в условиях вечной мерзлоты" />
+            <div class="card-img-overlay"></div>
+            <div class="card-number">01</div>
+          </div>
+          <div class="card-body">
+            <div class="card-icon"></div>
+            <h3 class="card-title">Вечная мерзлота</h3>
+            <p class="card-text">
+              На протяжении почти трети всей трассы — от Байкала до Владивостока — строители столкнулись с вечномёрзлыми
+              грунтами. Земля промерзала на глубину до нескольких десятков метров и вела себя непредсказуемо: летом
+              превращалась в болото, зимой вздымала полотно, разрывая рельсы. Инженеры были вынуждены изобретать
+              специальные методы укладки балласта, дренажные системы и насыпи, чтобы предотвратить просадку пути. Этот
+              бесценный опыт заложил основы для особой науки — геокриологии.
+            </p>
+            <div class="card-tag">Транзакция риска · Забайкалье</div>
+          </div>
+        </div>
+
+
+        <div class="challenge-card" id="card-tunnel">
+          <div class="card-img-wrap">
+            <img src="images/card_baikal_tunnel1.jpg" alt="Тоннели Кругобайкальской железной дороги" />
+            <div class="card-img-overlay"></div>
+            <div class="card-number">02</div>
+          </div>
+          <div class="card-body">
+            <div class="card-icon"></div>
+            <h3 class="card-title">Тоннели КБЖД</h3>
+            <p class="card-text">
+              Кругобайкальская железная дорога — «золотая пряжка» Транссиба — стала настоящим шедевром инженерной мысли.
+              Её прокладка вдоль скалистого южного берега Байкала потребовала строительства <strong>39 тоннелей</strong>
+              общей длиной 9 километров, <strong>16 каменных галерей</strong> и 248 мостов и виадуков — на 84 км пути.
+              Скальные породы взрывали вручную дробью и чёрным порохом. Каменные порталы тоннелей строились в стиле
+              итальянского ренессанса — след присутствия иностранных специалистов на стройке.
+            </p>
+            <div class="card-tag">Шедевр инженерии · Берег Байкала</div>
+          </div>
+        </div>
+
+
+        <div class="challenge-card" id="card-bridge">
+          <div class="card-img-wrap">
+            <img src="images/card_yenisei_bridge1.jpg" alt="Мост через реку Енисей в Красноярске" />
+            <div class="card-img-overlay"></div>
+            <div class="card-number">03</div>
+          </div>
+          <div class="card-body">
+            <div class="card-icon"></div>
+            <h3 class="card-title">Мост через Енисей</h3>
+            <p class="card-text">
+              Мост через Енисей в Красноярске, спроектированный инженером <strong>Лавром Проскуряковым</strong>, стал
+              одним из крупнейших металлических мостов конца XIX века. Его длина составляла 949 метров, а центральный
+              пролёт перекрывал 144 метра стремительного течения. В 1900 году на Всемирной выставке в Париже этот мост
+              был удостоен <strong>золотой медали</strong> как выдающееся достижение инженерного искусства эпохи.
+              Достаточно могучий, чтобы выстоять против ледяных заторов и весенних разливов знаменитой сибирской реки.
+            </p>
+            <div class="card-tag">Золотая медаль Парижа · 1900</div>
+          </div>
+        </div>
+
+
+        <div class="challenge-card" id="card-ferry">
+          <div class="card-img-wrap">
+            <img src="images/card_baikal_ferry1.jpg" alt="Паром-ледокол «Байкал» на озере Байкал" />
+            <div class="card-img-overlay"></div>
+            <div class="card-number">04</div>
+          </div>
+          <div class="card-body">
+            <div class="card-icon"></div>
+            <h3 class="card-title">Паром-ледокол «Байкал»</h3>
+            <p class="card-text">
+              Пока Кругобайкальская дорога ещё строилась, озеро Байкал стало главным препятствием на пути из Иркутска на
+              восток. Разрыв в маршруте длиною 70 км преодолевался с помощью уникального судна — <strong>парома-ледокола
+                «Байкал»</strong>, заказанного в Англии. Корабль перевозил по 28 товарных вагонов за рейс, а в зимнее
+              время, когда лёд достигал полутора метров, прокладывал себе путь стальным носом. В годы Русско-японской
+              войны паром работал в критически важном режиме, обеспечивая снабжение армии на Дальнем Востоке.
+            </p>
+            <div class="card-tag">Уникальное судно · Озеро Байкал, 1897</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section id="gallery" class="section-darker">
+    <div class="container">
+      <div class="section-label">Часть IV</div>
+      <h2 class="section-title">Эпоха<br /><em>в фотографиях</em></h2>
+      <div class="section-underline"></div>
+      <p class="section-desc">Снимки эпохи сохранили для нас лица и пейзажи великой стройки.</p>
+
+      <div class="gallery-grid">
+        <div class="gallery-item gallery-item--large" id="gal-1">
+          <img src="images/hero_locomotive2.png" alt="Паровоз на Транссибирской магистрали" />
+          <div class="gallery-caption">
+            <span class="gallery-tag">ок. 1895</span>
+            <span>Паровоз серии Щ на Западно-Сибирском участке</span>
+          </div>
+        </div>
+        <div class="gallery-item" id="gal-2">
+          <img src="images/gallery_workers1.jpg" alt="Строители Транссибирской магистрали" />
+          <div class="gallery-caption">
+            <span class="gallery-tag">1896</span>
+            <span>Рабочие на укладке пути. Томская губерния</span>
+          </div>
+        </div>
+        <div class="gallery-item" id="gal-3">
+          <img src="images/gallery_station1.jpeg" alt="Станция Красноярск, 1900-е годы" />
+          <div class="gallery-caption">
+            <span class="gallery-tag">ок. 1900</span>
+            <span>Станция Красноярскъ. Отправление поезда</span>
+          </div>
+        </div>
+        <div class="gallery-item" id="gal-4">
+          <img src="images/card_baikal_tunnel1.jpg" alt="Тоннель КБЖД над Байкалом" />
+          <div class="gallery-caption">
+            <span class="gallery-tag">1910</span>
+            <span>Тоннель КБЖД №18. Дорога над водой</span>
+          </div>
+        </div>
+        <div class="gallery-item gallery-item--wide" id="gal-5">
+          <img src="images/card_baikal_ferry2.jpg" alt="Ледокол «Байкал»" />
+          <div class="gallery-caption">
+            <span class="gallery-tag">1901</span>
+            <span>Паром-ледокол «Байкалъ» пробивает лёд. Озеро Байкал</span>
+          </div>
+        </div>
+        <div class="gallery-item gallery-item--wide" id="gal-6">
+          <img src="images/card_yenisei_bridge1.jpg" alt="Мост через Енисей" />
+          <div class="gallery-caption">
+            <span class="gallery-tag">1896</span>
+            <span>Красноярский мост через Енисей — победитель Парижской выставки</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="legacy" class="section-dark">
+    <div class="container">
+      <div class="section-label">Эпилог</div>
+      <h2 class="section-title">Наследие</h2>
+      <div class="section-underline"></div>
+
+      <div class="legacy-grid">
+        <div class="legacy-intro">
+          <p class="legacy-lead">
+            Завершение строительства Транссибирской магистрали в 1916 году стало подлинной революцией — не политической,
+            но цивилизационной.
+          </p>
+          <p>
+            За два с половиной десятилетия строительства дорога изменила Сибирь необратимо. Вдоль путей возникли десятки
+            новых городов и посёлков. Только в период с 1896 по 1914 год в Сибирь переехали более <strong>3,5 миллиона
+              крестьян</strong>. Столыпинская реформа опиралась на Транссиб как на главный инструмент аграрной
+            колонизации — и вполне справедливо.
+          </p>
+          <p>
+            В экономическом отношении дорога открыла путь сибирскому зерну, углю и лесу на рынки западной России и
+            Европы. Экспорт масла из Западной Сибири в 1900-х годах стал настолько значимым, что Дания всерьёз
+            забеспокоилась о конкуренции. Россия внезапно оказалась одним из крупнейших экспортёров сельскохозяйственной
+            продукции в мире.
+          </p>
+          <p>
+            В военно-стратегическом смысле Транссиб позволил России быстро перебрасывать войска на восточные рубежи.
+            Этот фактор сыграл ключевую роль в обеих мировых войнах и в сохранении огромной территории в составе
+            государства. Именно Транссиб не позволил России потерять Сибирь.
+          </p>
+        </div>
+
+        <div class="legacy-impact">
+          <div class="impact-card">
+            <div class="impact-icon">🏙️</div>
+            <div class="impact-data">
+              <span class="impact-num">+50</span>
+              <span class="impact-label">новых городских поселений вдоль магистрали</span>
+            </div>
+          </div>
+          <div class="impact-card">
+            <div class="impact-icon">👥</div>
+            <div class="impact-data">
+              <span class="impact-num">3.5 млн</span>
+              <span class="impact-label">переселенцев в Сибирь за 1896–1914 гг.</span>
+            </div>
+          </div>
+          <div class="impact-card">
+            <div class="impact-icon">🌾</div>
+            <div class="impact-data">
+              <span class="impact-num">№1</span>
+              <span class="impact-label">мировой экспортёр масла — Западная Сибирь</span>
+            </div>
+          </div>
+          <div class="impact-card">
+            <div class="impact-icon">🚂</div>
+            <div class="impact-data">
+              <span class="impact-num">9 298 км</span>
+              <span class="impact-label">самая длинная железная дорога мира по сей день</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="legacy-closing">
+        <div class="closing-divider">
+          <span class="divider-line"></span>
+          <span class="closing-icon"></span>
+          <span class="divider-line"></span>
+        </div>
+        <p class="closing-text">
+          Транссибирская магистраль и сегодня остаётся главной транспортной артерией России. Ежегодно через неё
+          перемещается более <strong>100 миллионов тонн грузов</strong>, а поезд Москва–Владивосток по праву считается
+          одним из самых легендарных railway-путешествий мира. Начатая в эпоху паровых машин и ручного труда, она стала
+          символом того, чего может достичь государственная воля в сочетании с человеческим гением.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="footer-logo">
+        <span class="footer-logo-icon"></span>
+        <span class="footer-logo-text">Великий Сибирский Путь</span>
+      </div>
+      <nav class="footer-nav">
+        <a href="#intro">Предыстория</a>
+        <a href="#map">Маршрут</a>
+        <a href="#challenges">Испытания</a>
+        <a href="#gallery">Галерея</a>
+        <a href="#legacy">Наследие</a>
+      </nav>
+    </div>
+    <div class="footer-divider"></div>
+    <div class="footer-bottom">
+      <div class="footer-project">
+        <span>Университетский проект: <strong>История науки и техники России</strong></span>
+      </div>
+      <div class="footer-author">
+        Выполнил: <strong>Егор Сивков</strong> &nbsp;·&nbsp; Май 2026
+      </div>
+    </div>
+    <div class="footer-tags">
+      <span>#Транссиб</span>
+      <span>#ИсторияРоссии</span>
+      <span>#Инженерия</span>
+      <span>#РоссийскаяИмперия</span>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
